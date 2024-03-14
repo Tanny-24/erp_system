@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Link, useLocation } from 'react-router-dom'
 import { FcBiohazard } from 'react-icons/fc'
 import { HiOutlineLogout } from 'react-icons/hi'
-// import { DASHBOARD_SIDEBAR_BOTTOM_LINKS, DASHBOARD_SIDEBAR_LINKS } from '../../Lib/const/navigation'
+import {  DASHBOARD_SIDEBAR_LINKS } from '../../Lib/const/navigation'
 
 
 const linkClasses =
