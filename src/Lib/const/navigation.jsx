@@ -2,10 +2,10 @@ import {
 	HiOutlineViewGrid,
 	HiOutlineCube,
 	HiOutlineShoppingCart,
-	HiOutlineUsers,
-	HiOutlineDocumentText,
-	HiOutlineAnnotation,
+	
 } from 'react-icons/hi'
+import { IoCalendarClearOutline } from "react-icons/io5";
+
 
 export const DASHBOARD_SIDEBAR_LINKS = [
 	{
@@ -27,21 +27,10 @@ export const DASHBOARD_SIDEBAR_LINKS = [
 		icon: <HiOutlineShoppingCart />
 	},
 	{
-		key: 'customers',
-		label: 'Customers',
-		path: '/customers',
-		icon: <HiOutlineUsers />
+		key: 'calender',
+		label: 'Calender',
+		path: '/Calender',
+		icon: <IoCalendarClearOutline />
 	},
-	{
-		key: 'transactions',
-		label: 'Transactions',
-		path: '/transactions',
-		icon: <HiOutlineDocumentText />
-	},
-	{
-		key: 'messages',
-		label: 'Messages',
-		path: '/messages',
-		icon: <HiOutlineAnnotation />
-	}
+	
 ]
