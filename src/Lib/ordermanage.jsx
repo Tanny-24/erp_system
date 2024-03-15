@@ -20,7 +20,7 @@ const orderss = [
     { id: 17, orderId: "ORD017", customerName: "Mia Gonzalez", orderDate: "2024-03-31", status: "Shipped", address: "235 Maple Ln", phoneNumber: "555-2109" },
     { id: 18, orderId: "ORD018", customerName: "Charlotte Wilson", orderDate: "2024-04-01", status: "Delivered", address: "346 Pine Ave", phoneNumber: "555-7890" },
     { id: 19, orderId: "ORD019", customerName: "Daniel Anderson", orderDate: "2024-04-02", status: "Pending", address: "457 Elm St", phoneNumber: "555-2345" },
-    { id: 20, orderId: "ORD020", customerName: "Victoria Thomas", orderDate: "2024-04-03", status: "Shipped", address: "568 Oak Rd", phoneNumber: "555-6789" }
+    { id: 20, orderId: "ORD020", customerName: "Victoria Thomas", orderDate: "2024-04-03", status: "Shipped", address: "568 Oak Rd", phoneNumber: "555-6790" }
 
   ];
   
