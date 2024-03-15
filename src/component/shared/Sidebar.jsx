@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Link, useLocation } from 'react-router-dom'
-import { FcBiohazard } from 'react-icons/fc'
-import { HiOutlineLogout } from 'react-icons/hi'
+import { RiUserSharedLine } from 'react-icons/ri';
+
 import {  DASHBOARD_SIDEBAR_LINKS } from '../../Lib/const/navigation'
 
 
@@ -12,7 +12,7 @@ const linkClasses =
 		return (
 			<div className=" flex bg-neutral-900 w-60 p-3  flex-col">
 				<div className="flex items-center gap-2 px-1 py-3">
-					<FcBiohazard fontSize={24} />
+				<RiUserSharedLine size={24} className="text-white" />
 					<span className="text-neutral-200 text-lg">ERP System</span>
 				</div>
 				<div className="flex-1  py-8 felx felx-col gap-0.5">

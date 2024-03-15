@@ -32,26 +32,31 @@ const CalendarView = () => {
     }
     return (
       <div>
-        <h3 className="text-xl font-bold mb-2">Orders: </h3>
-        <table className="w-full border-collapse border border-gray-400">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border border-gray-400 px-4 py-2">Order ID</th>
-              <th className="border border-gray-400 px-4 py-2">Customer Name</th>
-              <th className="border border-gray-400 px-4 py-2">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map(order => (
-              <tr key={order.id}>
-                <td className="border border-gray-400 px-4 py-2">{order.orderId}</td>
-                <td className="border border-gray-400 px-4 py-2">{order.customerName}</td>
-                <td className="border border-gray-400 px-4 py-2">{order.status}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+  <h3 className="text-xl font-bold mb-4">Orders:</h3>
+  <div className="overflow-x-auto">
+    <table className="w-full table-auto border-collapse border border-gray-400">
+      <thead>
+        <tr className="bg-gray-200">
+          <th className="border border-gray-400 px-4 py-2 text-left">Order ID</th>
+          <th className="border border-gray-400 px-4 py-2 text-left">Customer Name</th>
+          <th className="border border-gray-400 px-4 py-2 text-left">Status</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {orders.map(order => (
+          <tr key={order.id} className="bg-white">
+            <td className="border border-gray-400 px-4 py-2">{order.orderId}</td>
+            <td className="border border-gray-400 px-4 py-2">{order.customerName}</td>
+            <td className="border border-gray-400 px-4 py-2">{order.status}</td>
+            
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
     );
   };
 

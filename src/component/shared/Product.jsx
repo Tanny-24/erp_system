@@ -121,13 +121,13 @@ const ProductsManagement = () => {
               <td className="border border-gray-300 py-2 px-4">
                 {editProductId === product.id ? (
                   <>
-                    <button onClick={handleSubmit}>Save</button>
-                    <button onClick={() => setEditProductId(null)}>Cancel</button>
+                    <button onClick={handleSubmit} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2 border border-transparent" >Save</button>
+                    <button onClick={() => setEditProductId(null)} className="border border-red-500 hover:border-red-700 text-red-500 font-bold py-2 px-4 rounded" >Cancel</button>
                   </>
                 ) : (
                   <>
-                    <button onClick={() => handleEdit(product)}>Edit</button>
-                    <button onClick={() => handleDelete(product.id)}>Delete</button>
+                    <button onClick={() => handleEdit(product)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mr-2">Edit</button>
+                    <button onClick={() => handleDelete(product.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded">Delete</button>
                   </>
                 )}
               </td>
