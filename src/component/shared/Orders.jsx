@@ -64,7 +64,7 @@ const Orders = () => {
                 </div>
               )}
               <div className="flex justify-end mt-4">
-                <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-4 rounded mr-2" onClick={() => toggleOrderDetails(order.id)}>Toggle Details</button>
+                <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-4 rounded mr-2" onClick={() => toggleOrderDetails(order.id)}>Order Details</button>
                 <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-4 rounded" onClick={() => handleDeleteOrder(order.id)}>Delete</button>
               </div>
             </div>
@@ -72,7 +72,6 @@ const Orders = () => {
         </div>
       </div>
 
-      <Link to="/" className="block mt-8 underline">Go to Dashboard</Link>
     </div>
   );
 };
