@@ -1,4 +1,3 @@
-// Orders.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import orderss from '../../Lib/ordermanage';
@@ -7,11 +6,13 @@ const Orders = () => {
   const [expandedOrderId, setExpandedOrderId] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [showNotFoundMessage, setShowNotFoundMessage] = useState(false);
+  const [orders, setOrders] = useState(orderss);
 
   const handleDeleteOrder = (id) => {
     const confirmed = window.confirm("Are you sure you want to delete this order?");
     if (confirmed) {
-      const filteredOrders = orderss.filter(order => order.id !== id);
+      const filteredOrders = orders.filter(order => order.id !== id);
+      setOrders(filteredOrders);
     }
   };
 
@@ -20,18 +21,12 @@ const Orders = () => {
   };
 
   const handleSearch = () => {
-    if (searchTerm && !orderss.some(order => order.customerName.toLowerCase().includes(searchTerm.toLowerCase()))) {
-      setShowNotFoundMessage(true);
-    } else {
-      setShowNotFoundMessage(false);
-    }
-  };
+    const searchTermLowerCase = searchTerm.toLowerCase();
+    const foundOrders = orderss.filter(order => order.customerName.toLowerCase().includes(searchTermLowerCase) || order.orderId.includes(searchTermLowerCase));
 
-  const filteredOrders = orderss.filter(order => {
-    // Filter by search term
-    const isNameMatched = order.customerName.toLowerCase().includes(searchTerm.toLowerCase());
-    return isNameMatched;
-  });
+    setShowNotFoundMessage(foundOrders.length === 0);
+    setOrders(foundOrders);
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -42,7 +37,7 @@ const Orders = () => {
         <input
           type="text"
           className="border border-gray-300 px-3 py-1 rounded mr-2"
-          placeholder="Search by customer name"
+          placeholder="Search by customer name or order ID"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -51,12 +46,12 @@ const Orders = () => {
         <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-4 rounded" onClick={handleSearch}>Search</button>
       </div>
 
-      {showNotFoundMessage && <p className="text-red-500 mb-4">No orders found for the specified customer name.</p>}
+      {showNotFoundMessage && <p className="text-red-500 mb-4">No orders found for the specified customer name or order ID.</p>}
 
-      {/* Display filtered orders with scrolling */}
+      {/* Display orders */}
       <div className="max-h-screen overflow-y-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {filteredOrders.map(order => (
+          {orders.map(order => (
             <div key={order.id} className="bg-white rounded-lg shadow-md p-4">
               <p className="text-gray-800 font-semibold">Order ID: {order.orderId}</p>
               <p className="text-gray-600">Customer Name: {order.customerName}</p>
